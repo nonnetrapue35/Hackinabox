@@ -94,27 +94,27 @@ Unraid branché dessus si le branchement nu ne détecte pas l'USB lors du proces
 - 3.19) **Une fois que nous sommes dans la page "Disk Settings", nous allons changer "Enable auto start" à "Yes", puis cliquer sur le bouton "APPLY "** ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
 
 
-## 4) Setting Up Your macOS VM
+## 4) Configuration de votre VM macOS
 
-# !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
+# ! ! **DISCLAIMER : VOTRE NOMBRE DE LIGNES POURRAIT NE PAS ÊTRE LE MÊME QUE CELUI INDIQUÉ DANS LE GUIDE EN RAISON DE DIFFÉRENCES POTENTIELLES DANS LA CONFIGURATION MATÉRIELLE, PRENEZ-EN NOTE ET SOYEZ ATTENTIF AUX DIFFÉRENCES** ! !!
 
-- 4.1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
-- 4.2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
-- 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
-- 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** ![4.4](https://i.ibb.co/ChvQdtR/14-6.png)
-- 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
-- 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  \
-![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
-**Then, click on that to change it to "XML VIEW".**  \
+ 4.1) **Nous allons maintenant nous rendre dans l'onglet "VMS" du backend et cliquer sur le bouton "ADD VM "** ! [4.1](https://i.ibb.co/hLhL1jR/12.png)
+- 4.2) **Lorsque la page "Add VM" se charge, nous allons sélectionner FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
+- 4.3) **Une fois chargée, cliquez sur le bouton "EDIT" pour charger la page d'édition et modifier les paramètres de la VM. Lorsque la page suivante se charge, allez à la section "Logical CPUs", et sélectionnez toutes les autres combinaisons de CPU threads à l'exception de CPU 0 / X (où X est la variable pour votre noyau spécifique / nombre de threads). Après cela, assurez-vous de définir votre mémoire maximale. Gardez à l'esprit que Unraid a besoin de 4 Go de RAM, donc tout ce qui est inférieur de 4 Go à votre RAM maximale installée devrait être suffisant si vous n'avez pas besoin d'allouer plus ailleurs. ** ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
+- 4.4) **Puis, faites défiler la page et sélectionnez "3.0 qemu XHCI" dans le menu déroulant pour le contrôleur USB. Il s'agit d'une préférence personnelle concernant la sélection du contrôleur USB, et cela n'a pas vraiment d'importance puisque macOS ne supporte aucun d'entre eux. Assurez-vous ensuite de sélectionner votre GPU dans le menu déroulant de la carte graphique. Sélectionnez ensuite votre chipset audio approprié dans le menu déroulant de la sélection nommée Carte son.** ! [4.4](https://i.ibb.co/ChvQdtR/14-6.png)
+- 4.5) **Assurez-vous que Network Bridge est défini sur "br0" dans le menu déroulant et que Network Model est défini sur "virtio-net" dans la sélection déroulante appropriée. Ensuite, cochez les deux (ou plus ?) périphériques de la section "Other PCI Devices" que vous voulez faire passer. Décochez "Start VM after creation", puis cliquez sur le bouton "CREATE" PS : Ceci ne doit être fait que si l'utilisateur ne passe pas déjà, ou n'est pas capable de passer par son contrôleur Ethernet** ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
+- 4.6) **Cliquez sur l'icône FreeBSD, et choisissez "Edit". Dans le coin supérieur droit lorsque la page d'édition se charge, vous verrez un curseur avec les mots "FORM VIEW" à côté de lui.
+!4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
+**Cliquez dessus pour le changer en "XML VIEWER".
 ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
-- 4.7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
+- 4.7) **Après le chargement de la vue XML, nous allons aller à la ligne 37 et la supprimer (la ligne entière) en fonction de ce que nous avons sélectionné dans l'image ici. Ceci est fait parce que la topologie de QEMU n'est pas lue correctement par macOS et nécessiterait le patch du noyau de topologie à partir des patchs du noyau AMD afin de fonctionner autrement**.  
 ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 4.8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
-**and change it to "localtime"**  
+- 4.8) **Puis, nous allons aller à la ligne 40 et sélectionner le texte "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
+**et le changer en "localtime "**.  
 ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
-- 4.10) **On the line below 120 it says bus=‘0x03’ well at 127 change bus=‘0x04’ to 0x03 to match the gpu thats sets it as one device so the audio works.** ![4.10](https://i.ibb.co/MZDrV16/20.png) **Steps number 9 and number 10 are done to make your GPU and GPU audio device be seen to macOS as one device. The multifunction argument tells the hypervisor to allow multiple devices to operate on the same bus. Only the GPU audio device must match the GPU device bus and slot. The GPU audio device must use the function 0x1**
-- 4.11) **Head to the bottom on line 144 click the end of </devices> and hit enter to make a new line (145) and paste this:** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
+- 4.9) **Défilez vers le bas jusqu'à ce qui devrait être la ligne 63 et copiez multifonction = 'on',** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **et collez-la à la fin de la ligne 118 comme indiqué dans l'image correspondante, en vous assurant de changer le dernier zéro de function='0x0' à function='0x1' après avoir fait le travail de collage précédent, puisqu'il doit être changé aussi** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
+- 4.10) **Sur la ligne en dessous de 120 il est dit bus='0x03' bien à 127 changez bus='0x04' en 0x03 pour correspondre au gpu qui le définit comme un seul périphérique pour que l'audio fonctionne.** ![4.10](https://i.ibb.co/MZDrV16/20.png) **Les étapes numéro 9 et numéro 10 sont faites pour que votre GPU et le périphérique audio du GPU soient vus par macOS comme un seul périphérique. L'argument multifonction indique à l'hyperviseur d'autoriser plusieurs périphériques à fonctionner sur le même bus. Seul le périphérique audio GPU doit correspondre au bus et à l'emplacement du périphérique GPU. Le périphérique audio du GPU doit utiliser la fonction 0x1**.
+- 4.11) **Allez en bas de la ligne 144, cliquez sur la fin de </devices> et appuyez sur Entrée pour créer une nouvelle ligne (145) et collez ceci :** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
 ```
      <qemu:commandline>  
      <qemu:arg value='-device'/>  
@@ -125,8 +125,7 @@ Unraid branché dessus si le branchement nu ne détecte pas l'USB lors du proces
      <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>  
      </qemu:commandline>  
 ```
-- 4.12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
-
+- 4.12) **Après avoir collé le texte requis dans la nouvelle ligne 145, veuillez cliquer sur le bouton "UPDATE". Maintenant, après avoir appuyé sur le bouton de mise à jour, nous pouvons nous arrêter et redémarrer dans la distribution Linux Live de notre choix et continuer à créer l'installateur macOS, si nous n'en avons pas déjà créé un auparavant **.
 
 ## 5) Making the Recovery USB on Linux
 
