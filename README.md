@@ -1,45 +1,46 @@
 
 # Hackinabox
 
-## MacOS install using UnRaid
+## Installation de MacOS avec UnRaid
 
-This guide is for the computer user who would like to run macOS inside of a VM on UnRAID in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards, whilst enhancing the goals of providing the most native experience possible.
+Ce guide est destiné à l'utilisateur qui souhaite exécuter macOS à l'intérieur d'une VM sur UnRAID dans le but de contourner le besoin de multiples correctifs sur le matériel et les cartes mères basés sur AMD, tout en améliorant les objectifs de fournir l'expérience la plus native possible.
 
-## Acknowledgements
+## Remerciements
 
  - [Lime Technology](https://twitter.com/limetechnology)
  - [UnRAID](https://unraid.net/)
  - [OpenCore Bootloader](https://github.com/acidanthera/OpenCorePkg)
  - [Dortania Team](https://dortania.github.io/)
+ - [Pavo-IM](https://github.com/Pavo-IM/Hackinbox)
 
   
-## Authors of Guide
+## Auteurs du Guide
 
 - [@Pavo-IM](https://www.github.com/Pavo-IM)
 - [@osx86-ijb](https://www.github.com/osx86-ijb)
 - [@MattsCreative](https://twitter.com/MattsCreative1)
 
-## Appendix
+## Annexe
 
-- [1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
-- [2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
-- [3) Setting up your Host Device](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
-- [4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
-- [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
-- [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
-- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
-- [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox/tree/master#9-ssdt-setup-examples---before--after)
+- [1) Pour commencer](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
+- [2) Création de l'USB UnRAID](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
+- [3) Configuration de votre dispositif hôte](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
+- [4) Configuration de votre VM macOS](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
+- [5) Création de la clé USB de récupération sous Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
+- [6) Création de l'EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
+- [7) Installation de macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
+- [8) Finalisation post-installation](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
+- [9) Exemples de configuration du SSDT - Avant et après](https://github.com/osx86-ijb/Hackinabox/tree/master#9-ssdt-setup-examples---before--after)
 
 ## FAQ
 
-#### 1) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+#### 1) Si je n'ai pas d'installation macOS existante à utiliser pour créer un programme d'installation hors ligne de macOS, mais que je suis déjà démarré dans unRAID, que puis-je faire pour y parvenir ?
 [Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
 
-#### 2) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
-**WARNING:** 
+#### 2) Si ma VM se fige et que je ne peux pas la redémarrer correctement à partir du backend unRAID et que je suis confronté à l'option de redémarrage brutal de mon ordinateur, que puis-je/doit-on faire ?
+**ATTENTION:** 
 
-*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone of your unRAID installation, just in case the need would arise.*
+*Le redémarrage forcé de l'ordinateur ou la réinitialisation de l'ordinateur et le fait de ne pas choisir d'arrêter l'ordinateur en utilisant l'option prévue à cet effet dans le backend de l'unRAID peuvent entraîner la corruption des données et la nécessité éventuelle de refaire la clé USB de l'unRAID. À tout prix, il faut toujours s'assurer d'utiliser le bouton SHUTDOWN dans le backend de l'unRAID pour arrêter votre ordinateur, au lieu de le redémarrer. Il serait également judicieux de s'assurer d'avoir un clone 1/1 de votre installation unRAID, juste au cas où le besoin s'en ferait sentir*.
 
 #### 3) 
   
