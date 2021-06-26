@@ -1,5 +1,5 @@
 
-# Hackinabox (en cours de traduction)
+# Hackinabox
 
 ## Installation de MacOS avec UnRaid
 
