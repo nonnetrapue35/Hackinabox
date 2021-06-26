@@ -168,32 +168,32 @@ Unraid branché dessus si le branchement nu ne détecte pas l'USB lors du proces
 
 - 4.12) **Après avoir collé le texte requis dans la nouvelle ligne 145, veuillez cliquer sur le bouton "UPDATE". Maintenant, après avoir appuyé sur le bouton de mise à jour, nous pouvons nous arrêter et redémarrer dans la distribution Linux Live de notre choix et continuer à créer l'installateur macOS, si nous n'en avons pas déjà créé un auparavant **.
 
-## 5) Making the Recovery USB on Linux
+## 5) Création de la clé USB de récupération sous Linux
 
-- 5.1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
-
-
-## 6) Making the EFI
-
-- 6.1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
+- 5.1) [Rendez-vous sur la page du Guide d'installation d'OpenCore pour la création d'une clé USB d'installation de macOS via Linux pour continuer à créer votre clé USB, et une fois terminé, revenez ici pour continuer.](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 
-## 7) Installation of macOS
+## 6) Création de l'EFI
 
-- 7.1) **Create your USB based macOS installer as you normally would. I suggest using the ```createinstallmedia``` method on macOS.**
-- 7.2) **Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.**
-- 7.3) **Boot from the created installer inside of booted VM instance of OpenCore.**
-- 7.4) **Install your macOS version, and then boot into it after everything has finished! Make sure to copy over the EFI to the install drive so you can boot without using your macOS installer USB!**
+- 6.1) [Donc, après avoir créé votre installation USB de macOS, veuillez appliquer l'OpenCore EFI d'ici à la partition ESP/EFI de votre installation USB de macOS, en utilisant les hiérarchies de dossiers appropriées.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
 
 
-## 8) Post Installation Finalization
+## 7) Installation de macOS
 
-- 8.1) **We're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
-- 8.2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
-- 8.3) **Obtain and open IORegistryExplorer, preferrably the newest one  if possible, although any version of at least 2.x should suffice.**
-- 8.4) **Obtain and open MaciASL, preferrably the version from Acidanthera's GitHub repo.**
-- 8.5) **oad each of the SSDT's, working on them one at a time so as not to convolute the process.**
-- 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on.**
+- 7.1) **Créez votre installateur macOS basé sur USB comme vous le feriez normalement. Je suggère d'utiliser la méthode ``createinstallmedia`` sur macOS.**
+- 7.2) **Appliquez l'EFI qui peut être obtenu à partir de ce dépôt et dans l'étape précédente à la partition ESP de l'installateur USB créé.**
+- 7.3) **Démarrez à partir de l'installeur créé à l'intérieur d'une instance VM d'OpenCore.**
+- 7.4) **Installez votre version de macOS, puis démarrez-la une fois que tout est terminé ! Assurez-vous de copier l'EFI sur le disque d'installation afin de pouvoir démarrer sans utiliser votre USB d'installation de macOS !**.
+
+
+## 8) Finalisation de l'installation
+
+- 8.1) **Nous allons vouloir configurer notre matériel en entrant les informations et les valeurs correctes dans les emplacements corrects en utilisant IORegistryExplorer pour obtenir les emplacements et les noms d'adresses appropriés, et MaciASL pour éditer les fichiers SSDT et placer les informations correspondantes à notre matériel. N'oubliez pas de tester vos modifications de manière non destructive afin de ne pas bousiller votre EFI, et d'avoir une sauvegarde EFI fonctionnelle à partir de laquelle démarrer !**.
+- 8.2) **Montez votre partiton EFI/ESP en utilisant le moyen/logiciel de votre choix.**
+- 8.3) **Obtenez et ouvrez IORegistryExplorer, de préférence la plus récente si possible, bien que toute version d'au moins 2.x devrait suffire.**
+- 8.4) **Obtenez et ouvrez MaciASL, de préférence la version du repo GitHub d'Acidanthera.**
+- 8.5) **Chargez chacun des SSDT, en travaillant sur chacun d'entre eux un par un afin de ne pas alourdir le processus.
+- 8.6) **Dans chaque SSDT chargé, cherchez l'adresse et le nom du dispositif correspondant, et copiez les deux ensembles d'informations dans le SSDT correspondant sur lequel vous travaillez.**
 - 8.7) 
 - 8.8) 
 - 8.9) 
@@ -202,19 +202,19 @@ Unraid branché dessus si le branchement nu ne détecte pas l'USB lors du proces
 
 ## 9) SSDT Setup Examples - Before & After
 
-- 9.1a) **SSDT-ARPT.aml Before Editing:** ![9.1a](https://i.ibb.co/1bVw8XP/SSDT-ARPT-aml.png)  
-- 9.1b) **SSDT-ARPT.aml After Editing:** ![9.1b](https://i.ibb.co/3m211Ft/SSDT-ARPT-aml.png)
-- 9.2a) **SSDT-GFX.aml Before Editing:** ![9.2a](https://i.ibb.co/sJw0fpp/SSDT-GFX-aml.png)
-- 9.2b) **SSDT-GFX.aml After Editing:** ![9.2b](https://i.ibb.co/XD6Wn46/SSDT-GFX-aml.png)
-- 9.3a) **SSDT-NVME.aml Before Editing:** ![9.3a](https://i.ibb.co/sWBjgNB/SSDT-NVME-aml.png)
-- 9.3b) **SSDT-NVME.aml After Editing:** ![9.3b](https://i.ibb.co/zXC19jX/SSDT-NVME-aml.png)
-- 9.4a) **SSDT-PLUG.aml Before Editing:** ![9.4a](https://i.ibb.co/9Y8XyCT/SSDT-PLUG-aml.png)
-- 9.4b) **SSDT-PLUG.aml After Editing:** ![9.4b](https://i.ibb.co/TBTmc5s/SSDT-PLUG-aml.png)
-- 9.5a) **SSDT-XGE.aml Before Editing:** ![!9.5a](https://i.ibb.co/j5ssrxd/SSDT-XGE-aml.png)
-- 9.5b) **SSDT-XGE.aml After Editing:** ![9.5b](https://i.ibb.co/mqyPbc0/SSDT-XGE-aml.png)
-- 9.6a) **SSDT-XHC.aml Before Editing:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
+- 9.1a) **SSDT-ARPT.aml Avant d'éditer:** ![9.1a](https://i.ibb.co/1bVw8XP/SSDT-ARPT-aml.png)  
+- 9.1b) **SSDT-ARPT.aml Après édition:** ![9.1b](https://i.ibb.co/3m211Ft/SSDT-ARPT-aml.png)
+- 9.2a) **SSDT-GFX.aml Avant d'éditer:** ![9.2a](https://i.ibb.co/sJw0fpp/SSDT-GFX-aml.png)
+- 9.2b) **SSDT-GFX.aml Après édition:** ![9.2b](https://i.ibb.co/XD6Wn46/SSDT-GFX-aml.png)
+- 9.3a) **SSDT-NVME.aml Avant d'éditer:** ![9.3a](https://i.ibb.co/sWBjgNB/SSDT-NVME-aml.png)
+- 9.3b) **SSDT-NVME.aml Après édition:** ![9.3b](https://i.ibb.co/zXC19jX/SSDT-NVME-aml.png)
+- 9.4a) **SSDT-PLUG.aml Avant d'éditer:** ![9.4a](https://i.ibb.co/9Y8XyCT/SSDT-PLUG-aml.png)
+- 9.4b) **SSDT-PLUG.aml Après édition:** ![9.4b](https://i.ibb.co/TBTmc5s/SSDT-PLUG-aml.png)
+- 9.5a) **SSDT-XGE.aml Avant d'éditer:** ![!9.5a](https://i.ibb.co/j5ssrxd/SSDT-XGE-aml.png)
+- 9.5b) **SSDT-XGE.aml Après édition:** ![9.5b](https://i.ibb.co/mqyPbc0/SSDT-XGE-aml.png)
+- 9.6a) **SSDT-XHC.aml Avant d'éditer:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
 
 
 # Support
 
-For support, please join the AMD-OSX Discord Server and ask your question there, or join and ask at the AMD-OSX.com forums! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
+Pour obtenir de l'aide, veuillez rejoindre le serveur Discord d'AMD-OSX et y poser votre question, ou rejoindre et poser votre question sur les forums d'AMD-OSX.com ! Vous pouvez également chercher de l'aide concernant les questions relatives à Unraid sur les forums Unraid ! Merci, amusez-vous bien, et salutations !
