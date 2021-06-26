@@ -20,17 +20,17 @@ Ce guide est destiné à l'utilisateur qui souhaite exécuter macOS à l'intéri
 - [@osx86-ijb](https://www.github.com/osx86-ijb)
 - [@MattsCreative](https://twitter.com/MattsCreative1)
 
-## Annexe
+## Index
 
-- [1) Pour commencer](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
-- [2) Création de l'USB UnRAID](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
-- [3) Configuration de votre dispositif hôte](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
-- [4) Configuration de votre VM macOS](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
-- [5) Création de la clé USB de récupération sous Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Création de l'EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
-- [7) Installation de macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
-- [8) Finalisation post-installation](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
-- [9) Exemples de configuration du SSDT - Avant et après](https://github.com/osx86-ijb/Hackinabox/tree/master#9-ssdt-setup-examples---before--after)
+- [1) Pour commencer](https://github.com/nonnetrapue35/Hackinabox#1-d%C3%A9marrage-)
+- [2) Création de l'USB UnRAID](https://github.com/nonnetrapue35/Hackinabox#2-pr%C3%A9paration-de-lusb-unraid-)
+- [3) Configuration de votre dispositif hôte](https://github.com/nonnetrapue35/Hackinabox#3-configuration-de-votre-h%C3%B4te-unraid-server-os-)
+- [4) Configuration de votre VM macOS](https://github.com/nonnetrapue35/Hackinabox#4-configuration-de-votre-vm-macos)
+- [5) Création de la clé USB de récupération sous Linux](https://github.com/nonnetrapue35/Hackinabox#5-cr%C3%A9ation-de-la-cl%C3%A9-usb-de-r%C3%A9cup%C3%A9ration-sous-linux)
+- [6) Création de l'EFI](https://github.com/nonnetrapue35/Hackinabox#6-cr%C3%A9ation-de-lefi) 
+- [7) Installation de macOS](https://github.com/nonnetrapue35/Hackinabox#7-installation-de-macos)
+- [8) Finalisation post-installation](https://github.com/nonnetrapue35/Hackinabox#8-finalisation-de-linstallation)
+- [9) Exemples de configuration du SSDT - Avant et après](https://github.com/nonnetrapue35/Hackinabox#9-ssdt-setup-examples---before--after)
 
 ## FAQ
 
