@@ -42,7 +42,6 @@ Ce guide est destiné à l'utilisateur qui souhaite exécuter macOS à l'intéri
 
 *Le redémarrage forcé de l'ordinateur ou la réinitialisation de l'ordinateur et le fait de ne pas choisir d'arrêter l'ordinateur en utilisant l'option prévue à cet effet dans le backend de l'unRAID peuvent entraîner la corruption des données et la nécessité éventuelle de refaire la clé USB de l'unRAID. À tout prix, il faut toujours s'assurer d'utiliser le bouton SHUTDOWN dans le backend de l'unRAID pour arrêter votre ordinateur, au lieu de le redémarrer. Il serait également judicieux de s'assurer d'avoir un clone 1/1 de votre installation unRAID, juste au cas où le besoin s'en ferait sentir*.
 
-#### 3) 
   
 ## Fonctionnalités
 
