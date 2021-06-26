@@ -109,12 +109,19 @@ Unraid branché dessus si le branchement nu ne détecte pas l'USB lors du proces
 ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
 - 4.7) **Après le chargement de la vue XML, nous allons aller à la ligne 37 et la supprimer (la ligne entière) en fonction de ce que nous avons sélectionné dans l'image ici. Ceci est fait parce que la topologie de QEMU n'est pas lue correctement par macOS et nécessiterait le patch du noyau de topologie à partir des patchs du noyau AMD afin de fonctionner autrement**.  
 ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 4.8) **Puis, nous allons aller à la ligne 40 et sélectionner le texte "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
+- 4.8) **Puis, nous allons aller à la ligne 40 et sélectionner le texte "utc",** !
+[4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
 **et le changer en "localtime "**.  
 ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Défilez vers le bas jusqu'à ce qui devrait être la ligne 63 et copiez multifonction = 'on',** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **et collez-la à la fin de la ligne 118 comme indiqué dans l'image correspondante, en vous assurant de changer le dernier zéro de function='0x0' à function='0x1' après avoir fait le travail de collage précédent, puisqu'il doit être changé aussi** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
-- 4.10) **Sur la ligne en dessous de 120 il est dit bus='0x03' bien à 127 changez bus='0x04' en 0x03 pour correspondre au gpu qui le définit comme un seul périphérique pour que l'audio fonctionne.** ![4.10](https://i.ibb.co/MZDrV16/20.png) **Les étapes numéro 9 et numéro 10 sont faites pour que votre GPU et le périphérique audio du GPU soient vus par macOS comme un seul périphérique. L'argument multifonction indique à l'hyperviseur d'autoriser plusieurs périphériques à fonctionner sur le même bus. Seul le périphérique audio GPU doit correspondre au bus et à l'emplacement du périphérique GPU. Le périphérique audio du GPU doit utiliser la fonction 0x1**.
-- 4.11) **Allez en bas de la ligne 144, cliquez sur la fin de </devices> et appuyez sur Entrée pour créer une nouvelle ligne (145) et collez ceci :** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
+- 4.9) **Défilez vers le bas jusqu'à ce qui devrait être la ligne 63 et copiez multifonction = 'on',** !
+[4.9.1](https://i.ibb.co/GTCJncP/19.png) 
+**et collez-la à la fin de la ligne 118 comme indiqué dans l'image correspondante, en vous assurant de changer le dernier zéro de function='0x0' à function='0x1' après avoir fait le travail de collage précédent, puisqu'il doit être changé aussi** !
+[4.9.2](https://i.ibb.co/MZDrV16/20.png)
+- 4.10) **Sur la ligne en dessous de 120 il est dit bus='0x03' bien à 127 changez bus='0x04' en 0x03 pour correspondre au gpu qui le définit comme un seul périphérique pour que l'audio fonctionne.** !
+[4.10](https://i.ibb.co/MZDrV16/20.png) 
+**Les étapes numéro 9 et numéro 10 sont faites pour que votre GPU et le périphérique audio du GPU soient vus par macOS comme un seul périphérique. L'argument multifonction indique à l'hyperviseur d'autoriser plusieurs périphériques à fonctionner sur le même bus. Seul le périphérique audio GPU doit correspondre au bus et à l'emplacement du périphérique GPU. Le périphérique audio du GPU doit utiliser la fonction 0x1**.
+- 4.11) **Allez en bas de la ligne 144, cliquez sur la fin de </devices> et appuyez sur Entrée pour créer une nouvelle ligne (145) et collez ceci :** !
+[4.11](https://i.ibb.co/P5YDmZy/22.png) 
 ```
      <qemu:commandline>  
      <qemu:arg value='-device'/>  
